@@ -1,0 +1,42 @@
+# AIR-325 — Don't allow multiple membership benefits on 1 item
+
+## Test Result Report
+
+**Environment:** Staging  
+**URL:** https://staging.airtopiapark.com/pos/dashboard   
+
+---
+
+## Test Objective
+Verify that the POS system does not allow **multiple membership benefits to be applied to a single item** and ensures that only the **benefit with the maximum discount** is applied.
+
+---
+
+## Test Scenario
+A customer with an active **Elite Class SkyPass** membership was selected in the POS system.  
+Multiple items were added to the order to verify whether more than one membership benefit could be applied to the same item.
+
+---
+
+## Observed Behavior
+- Each item received **only one membership benefit**.
+- Discounts were applied to **different items**, not stacked on the same item.
+- No cases were observed where multiple membership benefits were applied to a single item.
+
+---
+
+## Expected Behavior
+The system should apply **only one membership benefit per item**.  
+If multiple benefits are available, the system should apply the **benefit with the highest discount value**.
+
+---
+
+## Result
+The issue **was not reproduced during testing**.  
+Membership benefits were applied correctly and **no multiple benefits were stacked on the same item**.
+
+---
+
+## Test Evidence
+
+![Test Screenshot](./screenshots/AIR-325-membership-benefits-test.png)
