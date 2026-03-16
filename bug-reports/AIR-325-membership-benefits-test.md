@@ -39,4 +39,4 @@ Membership benefits were applied correctly and **no multiple benefits were stack
 
 ## Test Evidence
 
-![Test Screenshot](./screenshots/AIR-325-membership-benefits-test.png)
+![Test Screenshot](../screenshots/AIR-325-membership-benefits-test.png)
