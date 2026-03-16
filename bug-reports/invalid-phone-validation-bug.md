@@ -1,5 +1,7 @@
 # Bug Report – Invalid Phone Number Accepted in Guest Membership Flow
 
+## AIR-362 (Test Guest creation without missing contact information)
+
 ## Environment
 
 URL:  
