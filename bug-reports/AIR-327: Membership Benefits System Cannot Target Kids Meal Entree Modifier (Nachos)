@@ -1,0 +1,38 @@
+# AIR-327: Membership Benefit correctly applies only to configured Kids Meal modifiers
+
+## Summary
+Test completed. Membership benefit is now correctly applied only to configured Kids Meal entrée modifiers in POS.
+
+## Environment
+- Version: v0.25.2  
+- Env: Staging (Admin & POS)  
+- Admin URL: https://staging.airtopiapark.com/admin/product/69b9c4908a95246f37b9e7ec  
+- POS URL: https://staging.airtopiapark.com/pos/order/create  
+
+## Test Result
+✅ Passed
+
+## Preconditions
+- Membership benefit (Elite Founder) is configured:
+  - Product: Kids Meal  
+  - Modifiers: Nachos, French Fries, Applesauce  
+
+## Steps to Reproduce
+1. Open POS → Create Order  
+2. Add Kids Meal  
+3. Select entrée = Hot Dog (not included in configured modifiers)  
+4. Apply membership (Elite Founder)  
+
+## Expected Result
+Discount should NOT be applied when selected entrée is not included in the configured modifier list.
+
+## Actual Result
+Discount is NOT applied when entrée (Hot Dog) is not part of the configured modifiers.  
+Discount is applied correctly only for configured modifiers (Nachos, French Fries, Applesauce).
+
+## Evidence
+![Test Result](../screenshots/air-327-member-benefits-system.png)
+
+## Notes
+- Configuration-based filtering works as expected.
+- System correctly limits benefit application to selected modifiers.
